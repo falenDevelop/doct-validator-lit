@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía de validación · Componentes Lit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="#inicio"><span class="brand-mark">{ }</span><span>Guía de validación</span></a>
+  <nav id="nav" aria-label="Secciones"></nav>
+</aside>
+
+<div class="main">
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">Menú</button>
+    <input id="search" type="search" placeholder="Buscar criterio, por ejemplo: JSDoc, optional chaining…" aria-label="Buscar">
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Criterios de validación para componentes Lit</h1>
+    <p>Referencia para aprender qué revisamos en un componente, por qué, y cómo se ve el código incorrecto frente al correcto.</p>
+    <div class="legend">
+      <span class="tag bad">Incorrecto</span> código que no cumple el criterio
+      <span class="tag good">Correcto</span> código que sí lo cumple
+    </div>
+  </section>
+
+  <main id="content"></main>
+  <p class="empty" id="empty" hidden>No hay criterios que coincidan con la búsqueda.</p>
+  <footer class="footer">Para agregar criterios edita los archivos <code>.md</code> en la raíz del proyecto. No requiere compilar.</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="parser.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

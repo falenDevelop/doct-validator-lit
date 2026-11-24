@@ -1,0 +1,20 @@
+[
+  "01-propiedades.md",
+  "02-constructor.md",
+  "03-importaciones.md",
+  "04-package-json.md",
+  "05-funciones-que-deberian-estar-en-utils.md",
+  "06-comillas-en-atributos-html.md",
+  "07-estilos-scss.md",
+  "08-metodos-getters-y-orden-de-la-clase.md",
+  "09-documentacion-de-la-clase.md",
+  "10-comentarios-y-codigo-de-depuracion.md",
+  "11-contenedores-de-layout-bbva.md",
+  "12-estandares-de-tests.md",
+  "13-scoped-elements.md",
+  "14-complejidad-ciclomatica.md",
+  "15-1-numeros-magicos.md",
+  "15-2-cadenas-magicas.md",
+  "16-optional-chaining.md",
+  "17-estructura-y-nombres-de-archivos.md"
+]
