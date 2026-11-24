@@ -30,8 +30,8 @@ static get styles() {
 }
 ```
 
-## c) Componentes Spherica
-Las rutas de @bbva-spherica-components/ terminan en /index.js, salvo BbvaHelpOnboarding y BbvaHelpOnboardingSlide. Algunos paquetes no lo tienen: verifica cada caso.
+## c) Componentes y ambients de paquetes
+Los componentes y ambients importados desde paquetes se resuelven desde el index.js del paquete. En @bbva-spherica-components/, las rutas terminan en /index.js, salvo BbvaHelpOnboarding y BbvaHelpOnboardingSlide. Si un paquete no publica ese archivo, se documenta la excepción.
 
 ```javascript incorrecto
 import { BbvaButton } from '@bbva-spherica-components/bbva-button';

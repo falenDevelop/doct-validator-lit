@@ -63,3 +63,16 @@ Los atributos id son descriptivos y semánticos; se evitan valores genéricos o 
 ```html correcto
 <input id="termAndCondCheck">
 ```
+
+## f) Acceso al DOM local
+No se consulta el DOM interno con this.shadowRoot.querySelector. Se prefieren referencias de Lit o el estado del componente. La excepción aplica únicamente a Data Managers cuando esté justificada y no se debe usar shadowRoot si no CreateRef y ref con la importación de lit/directives/ref.js de lit
+
+```javascript incorrecto
+this._buttonRef = this.shadowRoot.querySelector('button');
+```
+
+```javascript correcto
+render() {
+  return html`<button ${ref(this._buttonRef)} @click=${this._onButtonClick}>Action</button>`;
+}
+```

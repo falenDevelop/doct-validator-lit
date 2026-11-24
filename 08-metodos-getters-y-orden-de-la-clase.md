@@ -85,22 +85,22 @@ Los métodos privados que retornan HTML incluyen @returns {TemplateResult} (no a
 
 ```javascript incorrecto
 /**
- * Renders the title.
+ * Renders the card title.
  * @private
  */
 _titleTemplate() {
-  return html`<h1>${this.title}</h1>`;
+  return html`<h1>${this.cardTitle}</h1>`;
 }
 ```
 
 ```javascript correcto
 /**
- * Renders the title.
+ * Renders the card title.
  * @private
  * @returns {TemplateResult}
  */
 _titleTemplate() {
-  return html`<h1>${this.title}</h1>`;
+  return html`<h1>${this.cardTitle}</h1>`;
 }
 ```
 
@@ -211,4 +211,15 @@ export class MembershipDetailPanel extends LitElement {
     return 'membership-detail-panel';
   }
 }
+```
+
+## q) Contexto de listeners imperativos
+Al registrar un listener con addEventListener, se conserva el contexto de this mediante bind(this) o una función flecha.
+
+```javascript incorrecto
+button.addEventListener('click', this._onButtonClick);
+```
+
+```javascript correcto
+button.addEventListener('click', this._onButtonClick.bind(this));
 ```

@@ -70,7 +70,7 @@ render() {
 ```
 
 ## g) Elementos sin uso
-Se eliminan variables, métodos, imports, estilos, templates y archivos que no se utilizan.
+Se eliminan variables, métodos, imports, propiedades declaradas, estilos, templates, iconos, microilustraciones y otros recursos que no se utilizan.
 
 ## h) Mixin Core
 La clase Mixin utilizada como core o base sigue la guía de implementación y expone únicamente el contrato compartido que necesitan las clases consumidoras.

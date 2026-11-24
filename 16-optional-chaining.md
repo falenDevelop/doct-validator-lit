@@ -4,15 +4,15 @@ title: Optional chaining
 intro: Uso consistente de ?.
 ---
 
-## a) Cadena completa
-Después de un acceso opcional, los siguientes accesos de la cadena conservan ?.
+## a) Acceso a datos anidados
+Si un objeto o cualquiera de sus niveles puede no existir, se valida antes de acceder o se protege cada nivel con optional chaining. Para datos obligatorios, se valida el contrato y se maneja explícitamente la ausencia.
 
 ```javascript incorrecto
-const id = detail?.receiver.contract.id;
+const name = data.user.name;
 ```
 
 ```javascript correcto
-const id = detail?.receiver?.contract?.id;
+const name = data?.user?.name;
 ```
 
 ## b) Consistencia

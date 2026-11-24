@@ -39,16 +39,16 @@ _amount: { type: Number, state: true },
 ```
 
 ## c) Orden alfabético de públicas
-Las propiedades públicas van ordenadas alfabéticamente: amount, name, title.
+Las propiedades públicas van ordenadas alfabéticamente: amount, name, status.
 
 ```javascript incorrecto
-title: { type: String },
+status: { type: String },
 amount: { type: Number },
 ```
 
 ```javascript correcto
 amount: { type: Number },
-title: { type: String },
+status: { type: String },
 ```
 
 ## d) Orden alfabético de privadas
@@ -191,7 +191,7 @@ items: {
 ```
 
 ## l) Atributos con nombres compuestos
-Las públicas con mayúsculas en el nombre declaran el atributo HTML en kebab-case (salvo Array y Object). Ejemplo: userName usa attribute: 'user-name'.
+Las propiedades públicas de tipo String o Boolean con nombres compuestos en camelCase declaran explícitamente el atributo HTML en kebab-case. No se exige para Number, Array u Object. Ejemplo: userName usa attribute: 'user-name'.
 
 ```javascript incorrecto
 userName: {
@@ -211,15 +211,15 @@ userName: {
 No se declara attribute cuando es igual al nombre de una propiedad pública sin mayúsculas y que no es Array/Object.
 
 ```javascript incorrecto
-title: {
-  type: String,
-  attribute: 'title',
+amount: {
+  type: Number,
+  attribute: 'amount',
 },
 ```
 
 ```javascript correcto
-title: {
-  type: String,
+amount: {
+  type: Number,
 },
 ```
 
@@ -256,5 +256,20 @@ _amount: {
 _amount: {
   type: Number,
   state: true,
+},
+```
+
+## p) Nombres reservados
+Las propiedades del componente no reutilizan nombres que colisionen con propiedades nativas de HTML, DOM o JavaScript, como title, heading o style. Se elige un nombre específico para el componente.
+
+```javascript incorrecto
+title: {
+  type: String,
+},
+```
+
+```javascript correcto
+cardTitle: {
+  type: String,
 },
 ```

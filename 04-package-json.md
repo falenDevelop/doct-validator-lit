@@ -129,3 +129,14 @@ Las claves de dependencies y devDependencies se mantienen en orden alfabético.
 
 ## k) Archivo de bloqueo
 package-lock.json existe en la raíz y se incluye en el repositorio.
+
+## l) Referencias cerradas
+Las dependencias no apuntan a ramas Git, referencias flotantes como latest ni URLs sin una versión cerrada. Se usan versiones semánticas según las reglas de este documento.
+
+```json incorrecto
+{ "dependencies": { "component": "git+https://example.com/team/component.git#main" } }
+```
+
+```json correcto
+{ "dependencies": { "component": "^1.0.0" } }
+```

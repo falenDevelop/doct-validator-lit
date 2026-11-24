@@ -5,7 +5,7 @@ intro: Inicialización de las propiedades declaradas.
 ---
 
 ## a) Inicialización
-Las propiedades de static get properties() se inicializan en el constructor con this.nombre = valor.
+Todas las propiedades declaradas en static get properties() se inicializan en el constructor con this.nombre = valor.
 
 ```javascript incorrecto
 constructor() {
@@ -21,12 +21,13 @@ constructor() {
 ```
 
 ## b) Valores iniciales
-String: '' o "". Number: 0. Boolean: false. Array: []. Object: {} o una expresión con createRef().
+String: '' o "". Number: 0. Boolean: false. Array: []. Object: {} o una expresión con createRef(). No se inicializan propiedades con null ni undefined.
 
 ```javascript incorrecto
 this.active = true;
 this.amount = 10;
 this.data = null;
+this.name = undefined;
 this.items = [1];
 this.name = 'John';
 ```
@@ -91,13 +92,13 @@ Primero las públicas y luego las privadas (_). Cada grupo en orden alfabético,
 
 ```javascript incorrecto
 this._name = '';
-this.title = '';
+this.status = '';
 this.amount = 0;
 ```
 
 ```javascript correcto
 this.amount = 0;
-this.title = '';
+this.status = '';
 this._name = '';
 ```
 
