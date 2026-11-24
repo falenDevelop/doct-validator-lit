@@ -44,9 +44,34 @@ code {
   width: var(--side);
   background: var(--navy);
   color: #c9d6ea;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   padding: 20px 14px;
   z-index: 20;
+}
+#nav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+.sidebar-footer {
+  flex-shrink: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px 8px 0;
+  font-size: 0.85rem;
+}
+.sidebar-footer a {
+  color: var(--aqua);
+  text-decoration: none;
+  font-weight: 500;
+}
+.sidebar-footer a:hover {
+  text-decoration: underline;
+}
+.sidebar-footer p {
+  margin: 6px 0 0;
+  color: #8fa3c2;
 }
 .brand {
   display: flex;
@@ -90,6 +115,30 @@ code {
 }
 #nav a.hidden {
   display: none;
+}
+#nav a.cli-link b {
+  color: var(--navy);
+  background: var(--aqua);
+  border-radius: 4px;
+  padding: 0 4px;
+  min-width: auto;
+}
+.toc {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.toc a {
+  display: block;
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  color: #9fb3d1;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.toc a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .main {
@@ -308,6 +357,73 @@ pre code.hljs {
 mark {
   background: #ffe9a8;
   border-radius: 3px;
+}
+
+.guia {
+  padding: 32px 40px 16px;
+}
+.guia h1 {
+  font-size: 2rem;
+  color: var(--navy);
+  margin-top: 0;
+}
+.guia h2 {
+  color: var(--navy);
+  margin: 48px 0 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 24px;
+}
+.guia h3 {
+  color: var(--blue);
+  margin: 28px 0 8px;
+}
+.guia table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12px 0;
+  font-size: 0.92rem;
+}
+.guia th,
+.guia td {
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.guia th {
+  background: #eef2f8;
+}
+.guia blockquote {
+  margin: 14px 0;
+  padding: 8px 14px;
+  border-left: 4px solid var(--aqua);
+  background: #eaf8f8;
+}
+.guia pre {
+  background: var(--code);
+  color: #e6edf7;
+  padding: 14px 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+.guia :not(pre) > code {
+  background: #e7ecf4;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+.guia img {
+  max-width: 100%;
+}
+.guia .empty {
+  padding: 24px;
+}
+@media (max-width: 900px) {
+  .guia {
+    padding: 24px 20px 16px;
+  }
 }
 
 @media (max-width: 900px) {
