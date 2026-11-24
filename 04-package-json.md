@@ -104,3 +104,28 @@ Las dependencias de dependencies se usan en src/ o demo/; si no, se revisa su el
 ```json correcto
 { "dependencies": {} }
 ```
+
+## i) Nombre de paquetes feature
+En una feature, name sigue el formato @glomo-web-components/xxxxxx-xxxx-xxxxxx-pe, por la nueva convención de nombres MUD ya no debe incluir el prefijo bbva-feature.
+
+```json incorrecto
+{ "name": "bbva-feature-product-detail-cards-pe" }
+```
+
+```json correcto
+{ "name": "@glomo-web-components/card-information-product-detail-cards-pe" }
+```
+
+## j) Orden de dependencias
+Las claves de dependencies y devDependencies se mantienen en orden alfabético.
+
+```json incorrecto
+{ "dependencies": { "lit": "^3.0.0", "axios": "^1.0.0" } }
+```
+
+```json correcto
+{ "dependencies": { "axios": "^1.0.0", "lit": "^3.0.0" } }
+```
+
+## k) Archivo de bloqueo
+package-lock.json existe en la raíz y se incluye en el repositorio.
