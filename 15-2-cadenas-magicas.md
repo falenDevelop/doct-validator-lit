@@ -59,3 +59,9 @@ this.status = 'pending';
 ```javascript correcto
 this.name = '';
 ```
+
+## e) Textos localizados
+No se escriben textos en español directamente en labels, mensajes, títulos, atributos o placeholders. Se referencian desde locales.json mediante el sistema de traducciones.
+
+## f) Nombre de literales
+Las claves de literales siguen Feature+Page+Component+Description cuando hay steps, y Feature+Page+Description cuando no los hay.

@@ -67,3 +67,6 @@ const classes = [UserCard];
 import { UserCard } from './elements/user-card/index.js';
 const classes = [UserCard];
 ```
+
+## f) Elementos utilizados
+Cada componente importado o registrado en scopedElements se utiliza en el template o en la lógica del archivo. Los imports y registros sin uso se eliminan.

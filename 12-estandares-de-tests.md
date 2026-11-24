@@ -33,7 +33,7 @@ test('accessibility', async () => {
 ```
 
 ## c) Snapshots
-Se puede usar expect o assert. Cada archivo comprueba DOM, Shadow DOM y Light DOM; no hace falta duplicar con ambas interfaces.
+Se puede usar expect o assert. Cada archivo comprueba DOM, Shadow DOM y Light DOM; no hace falta duplicar con ambas interfaces. El snapshot de Shadow DOM ignora atributos de presentación como style.
 
 ```javascript incorrecto
 test('DOM snapshot', () => {
@@ -87,3 +87,23 @@ assert.equal(el._amount, 0);
 el.reset();
 assert.equal(el.amount, 0);
 ```
+
+## g) Descripciones
+Cada test describe de forma clara el escenario inicial, la acción y el resultado esperado.
+
+```javascript incorrecto
+test('works', async () => {});
+```
+
+```javascript correcto
+test('given an empty form, submit emits the validation error', async () => {});
+```
+
+## h) Mocks reutilizables
+Los mocks se definen en archivos independientes y se reutilizan; no se duplican dentro de cada archivo de prueba.
+
+## i) Casos indispensables
+Los tests se concentran en lógica crítica, flujos principales, eventos relevantes y API pública. Se evitan pruebas triviales, redundantes o ligadas a detalles internos.
+
+## j) Cobertura de comportamiento
+La suite cubre los escenarios principales del componente, incluidos métodos públicos, eventos, propiedades y flujos de datos, con la configuración mínima necesaria.

@@ -36,3 +36,14 @@ html`<user-card text=Hola ${nombre}></user-card>`;
 ```javascript correcto
 html`<user-card text="Hola ${nombre}"></user-card>`;
 ```
+
+## d) Propiedades booleanas
+Las propiedades booleanas enlazadas en un template usan el prefijo ?.
+
+```javascript incorrecto
+html`<user-card disabled=${this.disabled}></user-card>`;
+```
+
+```javascript correcto
+html`<user-card ?disabled=${this.disabled}></user-card>`;
+```

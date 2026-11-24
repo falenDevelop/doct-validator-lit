@@ -74,3 +74,6 @@ user-card/
 
 ## f) Decisiones
 Si el SCSS principal usa var(--...) o bbvaDecisionToken, deben existir nombre-decisions.scss y nombre-decisions.css.js en el mismo directorio.
+
+## g) Archivos index.js
+En custom elements y pages se recomienda un index.js para centralizar exports. Esta recomendación no aplica a utils, cuyas importaciones apuntan al archivo específico.

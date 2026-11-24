@@ -5,18 +5,18 @@ intro: JSDoc de métodos y orden de secciones.
 ---
 
 ## a) Documentación
-Métodos y getters llevan JSDoc con descripción. Se exceptúan constructor, render, getters estáticos especiales y ciclo de vida exceptuado.
+Métodos y getters llevan JSDoc con descripción. Se exceptúan is, constructor, properties, styles, render, init, reset y los métodos estándar del ciclo de vida.
 
 ```javascript incorrecto
+/**
+ * Resets the amount.
+ */
 reset() {
   this.amount = 0;
 }
 ```
 
 ```javascript correcto
-/**
- * Resets the amount.
- */
 reset() {
   this.amount = 0;
 }
@@ -59,7 +59,7 @@ _reset() {}
 ```
 
 ## d) Eventos
-Los métodos que emiten eventos incluyen @event en su JSDoc.
+Los métodos que emiten eventos incluyen @event nombre-del-evento en su JSDoc.
 
 ```javascript incorrecto
 /**
@@ -105,7 +105,7 @@ _titleTemplate() {
 ```
 
 ## f) Orden de secciones
-1) static get is(). 2) scopedElements. 3) properties. 4) constructor. 5) Ciclo de vida. 6) Métodos públicos. 7) Getters públicos. 8) Privados que no retornan HTML. 9) Privados que retornan HTML. 10) static get styles(). 11) render().
+1) static get is(). 2) scopedElements. 3) properties. 4) constructor. 5) Getters. 6) Métodos públicos. 7) Métodos privados. 8) Métodos que retornan HTML. 9) static get styles(). 10) render().
 
 ```javascript incorrecto
 class Feature extends LitElement {
@@ -143,3 +143,72 @@ reset() {
 
 ## i) Contenido duplicado
 No se repiten definiciones idénticas de métodos o getters.
+
+## j) Getters estáticos
+Un getter que no utiliza this ni estado de instancia se declara con static.
+
+```javascript incorrecto
+get defaultAmount() {
+  return 0;
+}
+```
+
+```javascript correcto
+static get defaultAmount() {
+  return 0;
+}
+```
+
+## k) Nombres descriptivos
+Métodos, variables, getters y funciones usan nombres específicos que expresan su propósito; se evitan nombres genéricos como data, value, item o process.
+
+## l) API pública de features
+Una feature solo expone init y reset como métodos públicos. El resto de su comportamiento se encapsula en métodos privados o se comunica mediante eventos.
+
+## m) Cantidad de parámetros
+Los métodos aceptan como máximo tres parámetros. Cuando necesitan más datos, reciben un objeto.
+
+```javascript incorrecto
+updateUser(name, email, phone, address) {}
+```
+
+```javascript correcto
+updateUser({ name, email, phone, address }) {}
+```
+
+## n) Nombre de funciones
+Los métodos y funciones usan lowerCamelCase y siguen la estructura verbo + sustantivo, por ejemplo getUserData o saveForm.
+
+## o) Prefijo de eventos
+El nombre de cada evento comienza con el nombre del componente declarado en static get is().
+
+```javascript incorrecto
+static get is() {
+  return 'membership-detail-panel';
+}
+
+this.dispatchEvent(new CustomEvent('detail-open'));
+```
+
+```javascript correcto
+static get is() {
+  return 'membership-detail-panel';
+}
+
+this.dispatchEvent(new CustomEvent('membership-detail-panel-detail-open'));
+```
+
+## p) Nombre del componente
+Todo componente declara obligatoriamente static get is() y retorna su nombre en kebab-case.
+
+```javascript incorrecto
+export class MembershipDetailPanel extends LitElement {}
+```
+
+```javascript correcto
+export class MembershipDetailPanel extends LitElement {
+  static get is() {
+    return 'membership-detail-panel';
+  }
+}
+```

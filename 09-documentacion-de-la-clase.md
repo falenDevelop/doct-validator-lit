@@ -85,7 +85,7 @@ Se incluyen @customElement, @LitElement y @appliesMixin.
 ```
 
 ## f) Eventos
-La cantidad de @fires en el JSDoc de clase coincide con los nombres de evento distintos documentados con @event en el archivo.
+La cantidad de @fires en el JSDoc de clase coincide con los nombres de evento distintos documentados con @event en el archivo. Cada entrada sigue @fires {propiedad} nombre-evento - Descripción o @fires {propiedad, otraPropiedad} nombre-evento - Descripción.
 
 ```javascript incorrecto
 /** @fires amount-changed */   // clase
@@ -95,8 +95,8 @@ La cantidad de @fires en el JSDoc de clase coincide con los nombres de evento di
 
 ```javascript correcto
 /**
- * @fires amount-changed
- * @fires card-selected
+ * @fires {amount} amount-changed - Amount changed.
+ * @fires {card, position} card-selected - Card selected.
  */
 ```
 
