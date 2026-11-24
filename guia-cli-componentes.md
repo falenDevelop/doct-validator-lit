@@ -30,6 +30,15 @@ Cada valor de `section-type` abre una página de ejemplo:
 
 ---
 
+## Documentación de consulta
+
+Antes de preparar el entorno, abre estos enlaces y tenlos a mano durante los ejercicios:
+
+- [Documentación de ac-lit](https://renzocordovadev.github.io/ac-lit/): punto de entrada para consultar los componentes disponibles.
+- [Documentación de ac-amount-basic](https://renzocordovadev.github.io/ac-lit/#ac-amount-basic): acceso directo a la referencia de este componente para consultar su uso antes de integrarlo en un ejercicio.
+
+Usa esta guía para seguir el paso a paso con el CLI y la documentación para consultar los componentes que vayas necesitando.
+
 ## 1. Preparar el entorno
 
 Necesitas **Node.js** (versión LTS) y **pnpm**.
@@ -2977,3 +2986,11 @@ Cada vez que vuelvas a trabajar en el proyecto, repite este ciclo:
 | `Cannot read properties of null` en `firstUpdated` | Usaste la referencia antes de que exista | Accede a `ref.value` solo después del primer render |
 | El modal no se abre | No se pasó `.open` o el valor no cambió | Revisa la propiedad `open` del modal |
 | El puerto 5173 está ocupado | Otra demo está corriendo | Cierra la otra terminal o usa otro puerto de Vite |
+
+---
+
+## 10. Laboratorio
+
+Al terminar la guía, entra al [Laboratorio de ac-lit](https://renzocordovadev.github.io/ac-lit/#laboratorio) para continuar con la práctica.
+
+Ten a mano la documentación y aplica el flujo aprendido: crea la base con `aclit component:create`, agrega las piezas del ejercicio y comprueba el resultado con `aclit component:serve`.
